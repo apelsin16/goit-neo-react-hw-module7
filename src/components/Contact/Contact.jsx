@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import css from './Contact.module.css';
 import { FaPhone, FaUser } from 'react-icons/fa6';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/contactsOps';
 import { useDispatch } from 'react-redux';
 
 const Contact = ({ contact: { id, name, number } }) => {
-
     const dispatch = useDispatch();
 
-    const handleDelete = () => dispatch(deleteContact(id))
+    const handleDelete = () => dispatch(deleteContact(id));
 
     return (
         <div className={css.Contact}>
